@@ -1,0 +1,84 @@
+body {
+    font-family: 'Georgia', serif;
+    background-color: #FAF0E6; /* Parchment color for an old-world map feel */
+    margin: 0;
+    padding: 0;
+    background-image: url('path_to_your_one_piece_background_image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: rgba(255,255,255,0.9); /* Slightly transparent white for legibility */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    border: 3px solid #DAA520; /* Golden border, resembling treasure chests */
+}
+
+h1 {
+    text-align: center;
+    color: #B22222; /* A deep red for intensity */
+    text-shadow: 2px 2px 4px #000;
+}
+
+h2 {
+    color: #8B4513; /* Brown color for a rustic, wooden look */
+}
+
+p, ul {
+    color: #333;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 20px; 
+}
+
+li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+li::before {
+    content: '⚓'; /* Adding a skull & bones symbol for each list item */
+    position: absolute;
+    left: -20px;
+    top: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-10%); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
+}
+
+.container {
+    animation: fadeIn 1.5s ease;
+}
+
+h1, h2 {
+    transition: all 0.3s ease;
+}
+
+h1:hover, h2:hover {
+    color: #FFD700; /* Gold color for a touch of treasure */
+    transform: scale(1.05); /* Slightly enlarges the heading */
+}
+
+li {
+    opacity: 0;
+    animation: slideIn 0.5s forwards;
+    animation-delay: calc(0.3s * var(--i)); /* A staggered delay for each list item */
+}
+
+/* To set a variable for the delay */
+li:nth-child(1) { --i: 1; }
+li:nth-child(2) { --i: 2; }
+li:nth-child(3) { --i: 3; }
